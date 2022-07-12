@@ -1,0 +1,91 @@
+
+
+#carousel-section{
+    width: 450px;
+    height: 300px;
+    margin: 100px auto;
+    position: relative;
+}
+
+#carousel-section .gallery{
+    height: 100%;
+    position: relative;
+}
+
+#carousel-section .gallery img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    display: none;
+}
+
+#carousel-section .gallery .active{
+    display: block;
+}
+
+.info{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 1.1rem;
+    display: none;
+    color: white;
+    box-shadow: 0 0 3px black;
+    font-weight: bold;
+}
+
+
+#carousel-section .bi{
+    font-size: 50px;
+}
+
+
+/* BUTTONS */
+
+#previous{
+    position: absolute;
+    top: 80%;
+    transform: translateY(-50%);
+    right: 102%;
+}
+
+#next{
+    position: absolute;
+    top: 80%;
+    transform: translateY(-50%);
+    left: 102%;
+}
+
+
+/* THUMBNAILS */
+
+#thumbnails{
+    width: 600px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+#thumbnails img{
+    width: 19%;
+    height:100%;
+    border-radius: 15px;
+    filter: grayscale(1);
+    cursor: pointer;
+}
+
+#thumbnails img.active{
+    filter: grayscale(0);
+    box-shadow: 0 0  8px darkcyan;
+}
+
+#thumbnails img:hover{
+    filter: grayscale(0);
+    transform: scale(1.3);
+    box-shadow: 0 0  8px goldenrod;
+    
+}
