@@ -51,7 +51,7 @@ const root = new Vue({
       goPrev(){
         this.currentActiveIndex--
         if(this.currentActiveIndex < 0) this.currentActiveIndex = this.pictures.length - 1;
-      }
+      },
 
     }
 });

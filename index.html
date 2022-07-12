@@ -34,7 +34,7 @@
             <i id="next" class="bi bi-caret-right-fill" @click="goNext"></i>
         </div>
         <div id="thumbnails">
-            <img v-for = "(picture,index) in pictures" :src="picture.url" alt="picture.title" :class ="{'active' : currentActiveIndex === index}">
+            <img v-for = "(picture,index) in pictures" @click="currentActiveIndex = index" :src="picture.url" alt="picture.title" :class ="{'active' : currentActiveIndex === index}">
         </div>
     </div>
     <script src="js/script.js"></script>
