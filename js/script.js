@@ -39,5 +39,19 @@ const root = new Vue({
           },
       ],
 
+    },
+
+    methods: {
+      goNext(){
+        this.currentActiveIndex++
+        if(this.currentActiveIndex > this.pictures.length - 1) this.currentActiveIndex = 0;
+        
+      },
+
+      goPrev(){
+        this.currentActiveIndex--
+        if(this.currentActiveIndex < 0) this.currentActiveIndex = this.pictures.length - 1;
+      }
+
     }
 });

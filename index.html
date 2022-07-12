@@ -21,15 +21,17 @@
     <div class="container" id="root">
         <div id="carousel-section">
             <div class="h1 bg-white text-center mt-5">PHOTO GALLERY FROM OVER THE WORLD</div>
-            <i id="previous" class="bi bi-caret-left-fill"></i>
-            <div  class="gallery">
-                    <img v-for = "(picture,index) in pictures" :src="picture.url" alt="picture.title" :class="{'active' : currentActiveIndex === index}">
-                    <!-- <div class="info">
+            <i id="previous" class="bi bi-caret-left-fill" @click="goPrev"></i>
+            <div class="gallery">
+                <figure v-for = "(picture,index) in pictures">
+                    <img :src="picture.url" :alt="picture.title" :class="{'active' : currentActiveIndex === index}">
+                    <div class="info" v-if="currentActiveIndex == index">
                         <h2>{{picture.title}}</h2>
                         <h3>{{picture.description}}</h3>
-                    </div> -->
+                    </div>   
+                </figure>
             </div>
-            <i id="next" class="bi bi-caret-right-fill"></i>
+            <i id="next" class="bi bi-caret-right-fill" @click="goNext"></i>
         </div>
         <div id="thumbnails">
             <img v-for = "(picture,index) in pictures" :src="picture.url" alt="picture.title" :class ="{'active' : currentActiveIndex === index}">
