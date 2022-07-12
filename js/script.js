@@ -3,6 +3,7 @@ Vue.config.devtools = true;
 const root = new Vue({
     el: '#root',
     data: {
+      currentActiveIndex: 0,
       pictures: [
         {
             url: 'http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg',
@@ -38,6 +39,5 @@ const root = new Vue({
           },
       ],
 
-      currentActiveIndex: 0,
     }
 });
