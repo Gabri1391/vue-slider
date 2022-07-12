@@ -38,7 +38,7 @@ const root = new Vue({
               'La Colombia è una terra ricca di luoghi da sogno, spiagge da sogno e cittadine colorate tutte da visitare. La Colombia è una meta di viaggio straordinaria.',
           },
       ],
-
+      
     },
 
     methods: {
@@ -52,6 +52,15 @@ const root = new Vue({
         this.currentActiveIndex--
         if(this.currentActiveIndex < 0) this.currentActiveIndex = this.pictures.length - 1;
       },
+      
+     autoplay(){
+      const autoplay = setInterval(() => {
+      this.currentActiveIndex ++
+      if(this.currentActiveIndex > this.pictures.length - 1) this.currentActiveIndex = 0;
+      },3000);
 
+      return setInterval(autoplay);
+     }
+      
     }
 });
