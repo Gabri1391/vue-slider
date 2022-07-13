@@ -22,9 +22,9 @@
         <div id="carousel-section">
             <div class="h1 bg-white text-center mt-5">PHOTO GALLERY FROM OVER THE WORLD</div>
             <i id="previous" class="bi bi-caret-left-fill" @click="goPrev"></i>
-            <div class="gallery" @mouseover="autoplay" @mouseleave="">
+            <div class="gallery"> 
                 <figure v-for = "(picture,index) in pictures">
-                    <img :src="picture.url" :alt="picture.title" :class="{'active' : currentActiveIndex === index}">
+                    <img :src="picture.url" :alt="picture.title" @mouseenter="stopAutoplay" @mouseleave="startAutoplay" :class="{'active' : currentActiveIndex === index}">
                     <div class="info" v-if="currentActiveIndex == index">
                         <h2>{{picture.title}}</h2>
                         <h3>{{picture.description}}</h3>

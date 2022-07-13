@@ -1,6 +1,7 @@
 Vue.config.devtools = true;
 
 const root = new Vue({
+    autoplay: undefined,
     el: '#root',
     data: {
       currentActiveIndex: 0,
@@ -52,15 +53,18 @@ const root = new Vue({
         this.currentActiveIndex--
         if(this.currentActiveIndex < 0) this.currentActiveIndex = this.pictures.length - 1;
       },
-      
-     autoplay(){
-      const autoplay = setInterval(() => {
-      this.currentActiveIndex ++
-      if(this.currentActiveIndex > this.pictures.length - 1) this.currentActiveIndex = 0;
-      },3000);
 
-      return setInterval(autoplay);
-     }
-      
-    }
+      stopAutoplay(){
+        clearInterval(this.autoplay);
+      },
+
+      startAutoplay(){
+        this.autoplay = setInterval(this.goNext, 2000);
+      }
+
+    },
+
+    created(){
+      this.startAutoplay();
+    },
 });
